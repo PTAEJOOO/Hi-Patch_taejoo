@@ -5,8 +5,7 @@
 
 ## Overview
 
-This repository contains implementation code for *Hi-Patch: Hierarchical Patch GNN for Irregular Multivariate Time Series*.
-We propose Hi-Patch to achieve multi-scale modeling for ISMTS and evaluate Hi-Patch on 8 datasets.
+This repository contains implementation code for *[Hi-Patch: Hierarchical Patch GNN for Irregular Multivariate Time Series](https://openreview.net/forum?id=nBgQ66iEUu)*. We propose Hi-Patch to achieve multi-scale modeling for ISMTS and evaluate Hi-Patch on 8 datasets.
 
 ## The model framework of Hi-Patch
 
