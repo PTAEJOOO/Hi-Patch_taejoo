@@ -1,6 +1,7 @@
-# Hi-Patch: Hierarchical Patch GNN for Irregular Multivariate Time Series
+# [ICML 2025] Hi-Patch: Hierarchical Patch GNN for Irregular Multivariate Time Series
 
-
+## 🔥News
+[2025-05-01] **Hi-Patch** is accepted by **ICML 2025**!
 
 ## Overview
 
