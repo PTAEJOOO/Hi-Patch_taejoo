@@ -1,0 +1,422 @@
+
+EnvironmentNameNotFound: Could not find conda environment: hipatch
+You can list all discoverable environments with `conda info --envs`.
+
+
+/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py
+2025-08-27 15:00:37
+train_forecasting.py --dataset activity --state def --history 3000 --patience 10 --batch_size 32 --lr 1e-3 --patch_size 750 --stride 750 --nhead 1 --nlayer 3 --hid_dim 64 --seed 0 --gpu 1 --alpha 1
+Namespace(state='def', n=100000000, epoch=1000, patience=10, history=3000, pred_window=1000, logmode='a', lr=0.001, w_decay=0.0, batch_size=32, load=None, seed=0, dataset='activity', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=3, patch_size=750.0, stride=750.0, hid_dim=64, alpha=1.0, res=1, gpu='1', npatch=4, device=device(type='cpu'), PID=792589, ndim=12, patch_layer=3, scale_patch_size=0.1875, task='forecasting')
+Traceback (most recent call last):
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py", line 157, in <module>
+    batch_dict = utils.get_next_batch(data_obj["train_dataloader"])
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 487, in get_next_batch
+    data_dict = dataloader.__next__()
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 345, in inf_generator
+    yield iterator.__next__()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 634, in __next__
+    data = self._next_data()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 678, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/parse_datasets.py", line 182, in <lambda>
+    collate_fn= lambda batch: collate_fn(batch, args, device, data_type = "train",
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/physionet.py", line 476, in patch_variable_time_collate_fn
+    data_dict = utils.split_and_patch_batch(data_dict, args, n_observed_tp, patch_indices)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 666, in split_and_patch_batch
+    patch_indices_fianl = torch.full((n_batch, args.npatch, max_patch_len, n_dim), n_tp).to(device) # n_batch, npacth, max_patch_len, n_dim
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/cuda/__init__.py", line 247, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No CUDA GPUs are available
+/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py
+2025-08-27 15:00:40
+train_forecasting.py --dataset activity --state def --history 3000 --patience 10 --batch_size 32 --lr 1e-3 --patch_size 750 --stride 750 --nhead 1 --nlayer 3 --hid_dim 64 --seed 1 --gpu 1 --alpha 1
+Namespace(state='def', n=100000000, epoch=1000, patience=10, history=3000, pred_window=1000, logmode='a', lr=0.001, w_decay=0.0, batch_size=32, load=None, seed=1, dataset='activity', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=3, patch_size=750.0, stride=750.0, hid_dim=64, alpha=1.0, res=1, gpu='1', npatch=4, device=device(type='cpu'), PID=792610, ndim=12, patch_layer=3, scale_patch_size=0.1875, task='forecasting')
+Traceback (most recent call last):
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py", line 157, in <module>
+    batch_dict = utils.get_next_batch(data_obj["train_dataloader"])
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 487, in get_next_batch
+    data_dict = dataloader.__next__()
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 345, in inf_generator
+    yield iterator.__next__()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 634, in __next__
+    data = self._next_data()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 678, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/parse_datasets.py", line 182, in <lambda>
+    collate_fn= lambda batch: collate_fn(batch, args, device, data_type = "train",
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/physionet.py", line 476, in patch_variable_time_collate_fn
+    data_dict = utils.split_and_patch_batch(data_dict, args, n_observed_tp, patch_indices)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 666, in split_and_patch_batch
+    patch_indices_fianl = torch.full((n_batch, args.npatch, max_patch_len, n_dim), n_tp).to(device) # n_batch, npacth, max_patch_len, n_dim
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/cuda/__init__.py", line 247, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No CUDA GPUs are available
+/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py
+2025-08-27 15:00:43
+train_forecasting.py --dataset activity --state def --history 3000 --patience 10 --batch_size 32 --lr 1e-3 --patch_size 750 --stride 750 --nhead 1 --nlayer 3 --hid_dim 64 --seed 2 --gpu 1 --alpha 1
+Namespace(state='def', n=100000000, epoch=1000, patience=10, history=3000, pred_window=1000, logmode='a', lr=0.001, w_decay=0.0, batch_size=32, load=None, seed=2, dataset='activity', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=3, patch_size=750.0, stride=750.0, hid_dim=64, alpha=1.0, res=1, gpu='1', npatch=4, device=device(type='cpu'), PID=792652, ndim=12, patch_layer=3, scale_patch_size=0.1875, task='forecasting')
+Traceback (most recent call last):
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py", line 157, in <module>
+    batch_dict = utils.get_next_batch(data_obj["train_dataloader"])
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 487, in get_next_batch
+    data_dict = dataloader.__next__()
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 345, in inf_generator
+    yield iterator.__next__()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 634, in __next__
+    data = self._next_data()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 678, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/parse_datasets.py", line 182, in <lambda>
+    collate_fn= lambda batch: collate_fn(batch, args, device, data_type = "train",
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/physionet.py", line 476, in patch_variable_time_collate_fn
+    data_dict = utils.split_and_patch_batch(data_dict, args, n_observed_tp, patch_indices)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 666, in split_and_patch_batch
+    patch_indices_fianl = torch.full((n_batch, args.npatch, max_patch_len, n_dim), n_tp).to(device) # n_batch, npacth, max_patch_len, n_dim
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/cuda/__init__.py", line 247, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No CUDA GPUs are available
+/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py
+2025-08-27 15:00:46
+train_forecasting.py --dataset activity --state def --history 3000 --patience 10 --batch_size 32 --lr 1e-3 --patch_size 750 --stride 750 --nhead 1 --nlayer 3 --hid_dim 64 --seed 3 --gpu 1 --alpha 1
+Namespace(state='def', n=100000000, epoch=1000, patience=10, history=3000, pred_window=1000, logmode='a', lr=0.001, w_decay=0.0, batch_size=32, load=None, seed=3, dataset='activity', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=3, patch_size=750.0, stride=750.0, hid_dim=64, alpha=1.0, res=1, gpu='1', npatch=4, device=device(type='cpu'), PID=792684, ndim=12, patch_layer=3, scale_patch_size=0.1875, task='forecasting')
+Traceback (most recent call last):
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py", line 157, in <module>
+    batch_dict = utils.get_next_batch(data_obj["train_dataloader"])
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 487, in get_next_batch
+    data_dict = dataloader.__next__()
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 345, in inf_generator
+    yield iterator.__next__()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 634, in __next__
+    data = self._next_data()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 678, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/parse_datasets.py", line 182, in <lambda>
+    collate_fn= lambda batch: collate_fn(batch, args, device, data_type = "train",
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/physionet.py", line 476, in patch_variable_time_collate_fn
+    data_dict = utils.split_and_patch_batch(data_dict, args, n_observed_tp, patch_indices)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 666, in split_and_patch_batch
+    patch_indices_fianl = torch.full((n_batch, args.npatch, max_patch_len, n_dim), n_tp).to(device) # n_batch, npacth, max_patch_len, n_dim
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/cuda/__init__.py", line 247, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No CUDA GPUs are available
+/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py
+2025-08-27 15:00:49
+train_forecasting.py --dataset activity --state def --history 3000 --patience 10 --batch_size 32 --lr 1e-3 --patch_size 750 --stride 750 --nhead 1 --nlayer 3 --hid_dim 64 --seed 4 --gpu 1 --alpha 1
+Namespace(state='def', n=100000000, epoch=1000, patience=10, history=3000, pred_window=1000, logmode='a', lr=0.001, w_decay=0.0, batch_size=32, load=None, seed=4, dataset='activity', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=3, patch_size=750.0, stride=750.0, hid_dim=64, alpha=1.0, res=1, gpu='1', npatch=4, device=device(type='cpu'), PID=792743, ndim=12, patch_layer=3, scale_patch_size=0.1875, task='forecasting')
+Traceback (most recent call last):
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py", line 157, in <module>
+    batch_dict = utils.get_next_batch(data_obj["train_dataloader"])
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 487, in get_next_batch
+    data_dict = dataloader.__next__()
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 345, in inf_generator
+    yield iterator.__next__()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 634, in __next__
+    data = self._next_data()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 678, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/parse_datasets.py", line 182, in <lambda>
+    collate_fn= lambda batch: collate_fn(batch, args, device, data_type = "train",
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/physionet.py", line 476, in patch_variable_time_collate_fn
+    data_dict = utils.split_and_patch_batch(data_dict, args, n_observed_tp, patch_indices)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 666, in split_and_patch_batch
+    patch_indices_fianl = torch.full((n_batch, args.npatch, max_patch_len, n_dim), n_tp).to(device) # n_batch, npacth, max_patch_len, n_dim
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/cuda/__init__.py", line 247, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No CUDA GPUs are available
+/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py
+2025-08-27 15:00:52
+train_forecasting.py --dataset activity --state def --history 3000 --patience 10 --batch_size 32 --lr 1e-3 --patch_size 750 --stride 750 --nhead 1 --nlayer 3 --hid_dim 64 --seed 5 --gpu 1 --alpha 1
+Namespace(state='def', n=100000000, epoch=1000, patience=10, history=3000, pred_window=1000, logmode='a', lr=0.001, w_decay=0.0, batch_size=32, load=None, seed=5, dataset='activity', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=3, patch_size=750.0, stride=750.0, hid_dim=64, alpha=1.0, res=1, gpu='1', npatch=4, device=device(type='cpu'), PID=792845, ndim=12, patch_layer=3, scale_patch_size=0.1875, task='forecasting')
+Traceback (most recent call last):
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py", line 157, in <module>
+    batch_dict = utils.get_next_batch(data_obj["train_dataloader"])
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 487, in get_next_batch
+    data_dict = dataloader.__next__()
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 345, in inf_generator
+    yield iterator.__next__()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 634, in __next__
+    data = self._next_data()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 678, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/parse_datasets.py", line 182, in <lambda>
+    collate_fn= lambda batch: collate_fn(batch, args, device, data_type = "train",
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/physionet.py", line 476, in patch_variable_time_collate_fn
+    data_dict = utils.split_and_patch_batch(data_dict, args, n_observed_tp, patch_indices)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 666, in split_and_patch_batch
+    patch_indices_fianl = torch.full((n_batch, args.npatch, max_patch_len, n_dim), n_tp).to(device) # n_batch, npacth, max_patch_len, n_dim
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/cuda/__init__.py", line 247, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No CUDA GPUs are available
+/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py
+2025-08-27 15:00:54
+train_forecasting.py --dataset activity --state def --history 2000 --patience 10 --batch_size 32 --lr 1e-3 --patch_size 500 --stride 500 --nhead 1 --nlayer 3 --hid_dim 64 --seed 0 --gpu 1 --alpha 1
+Namespace(state='def', n=100000000, epoch=1000, patience=10, history=2000, pred_window=2000, logmode='a', lr=0.001, w_decay=0.0, batch_size=32, load=None, seed=0, dataset='activity', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=3, patch_size=500.0, stride=500.0, hid_dim=64, alpha=1.0, res=1, gpu='1', npatch=4, device=device(type='cpu'), PID=792855, ndim=12, patch_layer=3, scale_patch_size=0.125, task='forecasting')
+Traceback (most recent call last):
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py", line 157, in <module>
+    batch_dict = utils.get_next_batch(data_obj["train_dataloader"])
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 487, in get_next_batch
+    data_dict = dataloader.__next__()
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 345, in inf_generator
+    yield iterator.__next__()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 634, in __next__
+    data = self._next_data()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 678, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/parse_datasets.py", line 182, in <lambda>
+    collate_fn= lambda batch: collate_fn(batch, args, device, data_type = "train",
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/physionet.py", line 476, in patch_variable_time_collate_fn
+    data_dict = utils.split_and_patch_batch(data_dict, args, n_observed_tp, patch_indices)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 666, in split_and_patch_batch
+    patch_indices_fianl = torch.full((n_batch, args.npatch, max_patch_len, n_dim), n_tp).to(device) # n_batch, npacth, max_patch_len, n_dim
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/cuda/__init__.py", line 247, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No CUDA GPUs are available
+/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py
+2025-08-27 15:00:57
+train_forecasting.py --dataset activity --state def --history 2000 --patience 10 --batch_size 32 --lr 1e-3 --patch_size 500 --stride 500 --nhead 1 --nlayer 3 --hid_dim 64 --seed 1 --gpu 1 --alpha 1
+Namespace(state='def', n=100000000, epoch=1000, patience=10, history=2000, pred_window=2000, logmode='a', lr=0.001, w_decay=0.0, batch_size=32, load=None, seed=1, dataset='activity', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=3, patch_size=500.0, stride=500.0, hid_dim=64, alpha=1.0, res=1, gpu='1', npatch=4, device=device(type='cpu'), PID=792861, ndim=12, patch_layer=3, scale_patch_size=0.125, task='forecasting')
+Traceback (most recent call last):
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py", line 157, in <module>
+    batch_dict = utils.get_next_batch(data_obj["train_dataloader"])
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 487, in get_next_batch
+    data_dict = dataloader.__next__()
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 345, in inf_generator
+    yield iterator.__next__()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 634, in __next__
+    data = self._next_data()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 678, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/parse_datasets.py", line 182, in <lambda>
+    collate_fn= lambda batch: collate_fn(batch, args, device, data_type = "train",
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/physionet.py", line 476, in patch_variable_time_collate_fn
+    data_dict = utils.split_and_patch_batch(data_dict, args, n_observed_tp, patch_indices)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 666, in split_and_patch_batch
+    patch_indices_fianl = torch.full((n_batch, args.npatch, max_patch_len, n_dim), n_tp).to(device) # n_batch, npacth, max_patch_len, n_dim
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/cuda/__init__.py", line 247, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No CUDA GPUs are available
+/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py
+2025-08-27 15:00:59
+train_forecasting.py --dataset activity --state def --history 2000 --patience 10 --batch_size 32 --lr 1e-3 --patch_size 500 --stride 500 --nhead 1 --nlayer 3 --hid_dim 64 --seed 2 --gpu 1 --alpha 1
+Namespace(state='def', n=100000000, epoch=1000, patience=10, history=2000, pred_window=2000, logmode='a', lr=0.001, w_decay=0.0, batch_size=32, load=None, seed=2, dataset='activity', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=3, patch_size=500.0, stride=500.0, hid_dim=64, alpha=1.0, res=1, gpu='1', npatch=4, device=device(type='cpu'), PID=792871, ndim=12, patch_layer=3, scale_patch_size=0.125, task='forecasting')
+Traceback (most recent call last):
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py", line 157, in <module>
+    batch_dict = utils.get_next_batch(data_obj["train_dataloader"])
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 487, in get_next_batch
+    data_dict = dataloader.__next__()
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 345, in inf_generator
+    yield iterator.__next__()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 634, in __next__
+    data = self._next_data()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 678, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/parse_datasets.py", line 182, in <lambda>
+    collate_fn= lambda batch: collate_fn(batch, args, device, data_type = "train",
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/physionet.py", line 476, in patch_variable_time_collate_fn
+    data_dict = utils.split_and_patch_batch(data_dict, args, n_observed_tp, patch_indices)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 666, in split_and_patch_batch
+    patch_indices_fianl = torch.full((n_batch, args.npatch, max_patch_len, n_dim), n_tp).to(device) # n_batch, npacth, max_patch_len, n_dim
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/cuda/__init__.py", line 247, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No CUDA GPUs are available
+/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py
+2025-08-27 15:01:02
+train_forecasting.py --dataset activity --state def --history 2000 --patience 10 --batch_size 32 --lr 1e-3 --patch_size 500 --stride 500 --nhead 1 --nlayer 3 --hid_dim 64 --seed 3 --gpu 1 --alpha 1
+Namespace(state='def', n=100000000, epoch=1000, patience=10, history=2000, pred_window=2000, logmode='a', lr=0.001, w_decay=0.0, batch_size=32, load=None, seed=3, dataset='activity', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=3, patch_size=500.0, stride=500.0, hid_dim=64, alpha=1.0, res=1, gpu='1', npatch=4, device=device(type='cpu'), PID=792879, ndim=12, patch_layer=3, scale_patch_size=0.125, task='forecasting')
+Traceback (most recent call last):
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py", line 157, in <module>
+    batch_dict = utils.get_next_batch(data_obj["train_dataloader"])
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 487, in get_next_batch
+    data_dict = dataloader.__next__()
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 345, in inf_generator
+    yield iterator.__next__()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 634, in __next__
+    data = self._next_data()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 678, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/parse_datasets.py", line 182, in <lambda>
+    collate_fn= lambda batch: collate_fn(batch, args, device, data_type = "train",
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/physionet.py", line 476, in patch_variable_time_collate_fn
+    data_dict = utils.split_and_patch_batch(data_dict, args, n_observed_tp, patch_indices)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 666, in split_and_patch_batch
+    patch_indices_fianl = torch.full((n_batch, args.npatch, max_patch_len, n_dim), n_tp).to(device) # n_batch, npacth, max_patch_len, n_dim
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/cuda/__init__.py", line 247, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No CUDA GPUs are available
+/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py
+2025-08-27 15:01:05
+train_forecasting.py --dataset activity --state def --history 2000 --patience 10 --batch_size 32 --lr 1e-3 --patch_size 500 --stride 500 --nhead 1 --nlayer 3 --hid_dim 64 --seed 4 --gpu 1 --alpha 1
+Namespace(state='def', n=100000000, epoch=1000, patience=10, history=2000, pred_window=2000, logmode='a', lr=0.001, w_decay=0.0, batch_size=32, load=None, seed=4, dataset='activity', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=3, patch_size=500.0, stride=500.0, hid_dim=64, alpha=1.0, res=1, gpu='1', npatch=4, device=device(type='cpu'), PID=792905, ndim=12, patch_layer=3, scale_patch_size=0.125, task='forecasting')
+Traceback (most recent call last):
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py", line 157, in <module>
+    batch_dict = utils.get_next_batch(data_obj["train_dataloader"])
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 487, in get_next_batch
+    data_dict = dataloader.__next__()
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 345, in inf_generator
+    yield iterator.__next__()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 634, in __next__
+    data = self._next_data()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 678, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/parse_datasets.py", line 182, in <lambda>
+    collate_fn= lambda batch: collate_fn(batch, args, device, data_type = "train",
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/physionet.py", line 476, in patch_variable_time_collate_fn
+    data_dict = utils.split_and_patch_batch(data_dict, args, n_observed_tp, patch_indices)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 666, in split_and_patch_batch
+    patch_indices_fianl = torch.full((n_batch, args.npatch, max_patch_len, n_dim), n_tp).to(device) # n_batch, npacth, max_patch_len, n_dim
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/cuda/__init__.py", line 247, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No CUDA GPUs are available
+/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py
+2025-08-27 15:01:07
+train_forecasting.py --dataset activity --state def --history 2000 --patience 10 --batch_size 32 --lr 1e-3 --patch_size 500 --stride 500 --nhead 1 --nlayer 3 --hid_dim 64 --seed 5 --gpu 1 --alpha 1
+Namespace(state='def', n=100000000, epoch=1000, patience=10, history=2000, pred_window=2000, logmode='a', lr=0.001, w_decay=0.0, batch_size=32, load=None, seed=5, dataset='activity', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=3, patch_size=500.0, stride=500.0, hid_dim=64, alpha=1.0, res=1, gpu='1', npatch=4, device=device(type='cpu'), PID=792914, ndim=12, patch_layer=3, scale_patch_size=0.125, task='forecasting')
+Traceback (most recent call last):
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py", line 157, in <module>
+    batch_dict = utils.get_next_batch(data_obj["train_dataloader"])
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 487, in get_next_batch
+    data_dict = dataloader.__next__()
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 345, in inf_generator
+    yield iterator.__next__()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 634, in __next__
+    data = self._next_data()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 678, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/parse_datasets.py", line 182, in <lambda>
+    collate_fn= lambda batch: collate_fn(batch, args, device, data_type = "train",
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/physionet.py", line 476, in patch_variable_time_collate_fn
+    data_dict = utils.split_and_patch_batch(data_dict, args, n_observed_tp, patch_indices)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 666, in split_and_patch_batch
+    patch_indices_fianl = torch.full((n_batch, args.npatch, max_patch_len, n_dim), n_tp).to(device) # n_batch, npacth, max_patch_len, n_dim
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/cuda/__init__.py", line 247, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No CUDA GPUs are available
+/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py
+2025-08-27 15:01:10
+train_forecasting.py --dataset activity --state def --history 1000 --patience 10 --batch_size 32 --lr 1e-3 --patch_size 250 --stride 250 --nhead 1 --nlayer 3 --hid_dim 64 --seed 0 --gpu 1 --alpha 1
+Namespace(state='def', n=100000000, epoch=1000, patience=10, history=1000, pred_window=3000, logmode='a', lr=0.001, w_decay=0.0, batch_size=32, load=None, seed=0, dataset='activity', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=3, patch_size=250.0, stride=250.0, hid_dim=64, alpha=1.0, res=1, gpu='1', npatch=4, device=device(type='cpu'), PID=792924, ndim=12, patch_layer=3, scale_patch_size=0.0625, task='forecasting')
+Traceback (most recent call last):
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py", line 157, in <module>
+    batch_dict = utils.get_next_batch(data_obj["train_dataloader"])
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 487, in get_next_batch
+    data_dict = dataloader.__next__()
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 345, in inf_generator
+    yield iterator.__next__()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 634, in __next__
+    data = self._next_data()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 678, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/parse_datasets.py", line 182, in <lambda>
+    collate_fn= lambda batch: collate_fn(batch, args, device, data_type = "train",
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/physionet.py", line 476, in patch_variable_time_collate_fn
+    data_dict = utils.split_and_patch_batch(data_dict, args, n_observed_tp, patch_indices)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 666, in split_and_patch_batch
+    patch_indices_fianl = torch.full((n_batch, args.npatch, max_patch_len, n_dim), n_tp).to(device) # n_batch, npacth, max_patch_len, n_dim
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/cuda/__init__.py", line 247, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No CUDA GPUs are available
+/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py
+2025-08-27 15:01:12
+train_forecasting.py --dataset activity --state def --history 1000 --patience 10 --batch_size 32 --lr 1e-3 --patch_size 250 --stride 250 --nhead 1 --nlayer 3 --hid_dim 64 --seed 1 --gpu 1 --alpha 1
+Namespace(state='def', n=100000000, epoch=1000, patience=10, history=1000, pred_window=3000, logmode='a', lr=0.001, w_decay=0.0, batch_size=32, load=None, seed=1, dataset='activity', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=3, patch_size=250.0, stride=250.0, hid_dim=64, alpha=1.0, res=1, gpu='1', npatch=4, device=device(type='cpu'), PID=792930, ndim=12, patch_layer=3, scale_patch_size=0.0625, task='forecasting')
+Traceback (most recent call last):
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py", line 157, in <module>
+    batch_dict = utils.get_next_batch(data_obj["train_dataloader"])
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 487, in get_next_batch
+    data_dict = dataloader.__next__()
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 345, in inf_generator
+    yield iterator.__next__()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 634, in __next__
+    data = self._next_data()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 678, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/parse_datasets.py", line 182, in <lambda>
+    collate_fn= lambda batch: collate_fn(batch, args, device, data_type = "train",
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/physionet.py", line 476, in patch_variable_time_collate_fn
+    data_dict = utils.split_and_patch_batch(data_dict, args, n_observed_tp, patch_indices)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 666, in split_and_patch_batch
+    patch_indices_fianl = torch.full((n_batch, args.npatch, max_patch_len, n_dim), n_tp).to(device) # n_batch, npacth, max_patch_len, n_dim
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/cuda/__init__.py", line 247, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No CUDA GPUs are available
+/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py
+2025-08-27 15:01:15
+train_forecasting.py --dataset activity --state def --history 1000 --patience 10 --batch_size 32 --lr 1e-3 --patch_size 250 --stride 250 --nhead 1 --nlayer 3 --hid_dim 64 --seed 2 --gpu 1 --alpha 1
+Namespace(state='def', n=100000000, epoch=1000, patience=10, history=1000, pred_window=3000, logmode='a', lr=0.001, w_decay=0.0, batch_size=32, load=None, seed=2, dataset='activity', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=3, patch_size=250.0, stride=250.0, hid_dim=64, alpha=1.0, res=1, gpu='1', npatch=4, device=device(type='cpu'), PID=792940, ndim=12, patch_layer=3, scale_patch_size=0.0625, task='forecasting')
+Traceback (most recent call last):
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py", line 157, in <module>
+    batch_dict = utils.get_next_batch(data_obj["train_dataloader"])
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 487, in get_next_batch
+    data_dict = dataloader.__next__()
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 345, in inf_generator
+    yield iterator.__next__()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 634, in __next__
+    data = self._next_data()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 678, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/parse_datasets.py", line 182, in <lambda>
+    collate_fn= lambda batch: collate_fn(batch, args, device, data_type = "train",
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/physionet.py", line 476, in patch_variable_time_collate_fn
+    data_dict = utils.split_and_patch_batch(data_dict, args, n_observed_tp, patch_indices)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 666, in split_and_patch_batch
+    patch_indices_fianl = torch.full((n_batch, args.npatch, max_patch_len, n_dim), n_tp).to(device) # n_batch, npacth, max_patch_len, n_dim
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/cuda/__init__.py", line 247, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No CUDA GPUs are available
+/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py
+2025-08-27 15:01:17
+train_forecasting.py --dataset activity --state def --history 1000 --patience 10 --batch_size 32 --lr 1e-3 --patch_size 250 --stride 250 --nhead 1 --nlayer 3 --hid_dim 64 --seed 3 --gpu 1 --alpha 1
+Namespace(state='def', n=100000000, epoch=1000, patience=10, history=1000, pred_window=3000, logmode='a', lr=0.001, w_decay=0.0, batch_size=32, load=None, seed=3, dataset='activity', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=3, patch_size=250.0, stride=250.0, hid_dim=64, alpha=1.0, res=1, gpu='1', npatch=4, device=device(type='cpu'), PID=792968, ndim=12, patch_layer=3, scale_patch_size=0.0625, task='forecasting')
+Traceback (most recent call last):
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py", line 157, in <module>
+    batch_dict = utils.get_next_batch(data_obj["train_dataloader"])
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 487, in get_next_batch
+    data_dict = dataloader.__next__()
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 345, in inf_generator
+    yield iterator.__next__()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 634, in __next__
+    data = self._next_data()
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 678, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/parse_datasets.py", line 182, in <lambda>
+    collate_fn= lambda batch: collate_fn(batch, args, device, data_type = "train",
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/physionet.py", line 476, in patch_variable_time_collate_fn
+    data_dict = utils.split_and_patch_batch(data_dict, args, n_observed_tp, patch_indices)
+  File "/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/../lib/utils.py", line 666, in split_and_patch_batch
+    patch_indices_fianl = torch.full((n_batch, args.npatch, max_patch_len, n_dim), n_tp).to(device) # n_batch, npacth, max_patch_len, n_dim
+  File "/home/taejoo/miniconda3/envs/hipatch/lib/python3.9/site-packages/torch/cuda/__init__.py", line 247, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No CUDA GPUs are available
+slurmstepd: error: *** JOB 370 ON gpusystem CANCELLED AT 2025-08-27T15:01:18 ***

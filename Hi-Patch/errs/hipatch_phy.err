@@ -4,17 +4,37 @@ You can list all discoverable environments with `conda info --envs`.
 
 
 /home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py
-2025-08-27 14:33:35
-train_forecasting.py --dataset physionet --state def --history 24 --patience 10 --batch_size 64 --lr 1e-3 --patch_size 6 --stride 6 --nhead 1 --nlayer 1 --hid_dim 64 --seed 1 --gpu 0 --alpha 1
-Namespace(state='def', n=100000000, epoch=1000, patience=10, history=24, pred_window=24, logmode='a', lr=0.001, w_decay=0.0, batch_size=64, load=None, seed=1, dataset='physionet', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=1, patch_size=6.0, stride=6.0, hid_dim=64, alpha=1.0, res=1, gpu='0', npatch=4, device=device(type='cuda', index=0), PID=784953, ndim=41, patch_layer=3, scale_patch_size=0.125, task='forecasting')
-- Epoch 000, ExpID 31249
-Train - Loss (one batch): 0.00445
-Val - Loss, MSE, RMSE, MAE, MAPE: 0.00725, 0.00725, 0.08517, 0.04569, 157.74%
-Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 0, 0.00704, 0.00704, 0.08392, 0.04584, 163.30%
-Time spent: 41.03s
-- Epoch 001, ExpID 31249
-Train - Loss (one batch): 0.00515
-Val - Loss, MSE, RMSE, MAE, MAPE: 0.00635, 0.00635, 0.07969, 0.04149, 140.34%
-Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 1, 0.00615, 0.00615, 0.07842, 0.04185, 141.53%
+2025-08-27 17:05:11
+train_forecasting.py --dataset physionet --state def --history 24 --patience 10 --batch_size 64 --lr 1e-3 --patch_size 6 --stride 6 --nhead 1 --nlayer 1 --hid_dim 64 --seed 3 --gpu 0 --alpha 1
+Namespace(state='def', n=100000000, epoch=1000, patience=10, history=24, pred_window=24, logmode='a', lr=0.001, w_decay=0.0, batch_size=64, load=None, seed=3, dataset='physionet', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=1, patch_size=6.0, stride=6.0, hid_dim=64, alpha=1.0, res=1, gpu='0', npatch=4, device=device(type='cuda', index=0), PID=818732, ndim=41, patch_layer=3, scale_patch_size=0.125, task='forecasting')
+- Epoch 000, ExpID 67404
+Train - Loss (one batch): 0.00529
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00695, 0.00695, 0.08335, 0.04568, 138.95%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 0, 0.00697, 0.00697, 0.08347, 0.04583, 137.90%
+Time spent: 40.97s
+- Epoch 001, ExpID 67404
+Train - Loss (one batch): 0.00425
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00647, 0.00647, 0.08045, 0.04213, 143.76%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 1, 0.00616, 0.00616, 0.07849, 0.04183, 137.08%
+Time spent: 40.56s
+- Epoch 002, ExpID 67404
+Train - Loss (one batch): 0.00378
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00620, 0.00620, 0.07874, 0.03964, 114.67%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 2, 0.00597, 0.00597, 0.07726, 0.03942, 108.41%
 Time spent: 40.81s
-slurmstepd: error: *** JOB 366 ON gpusystem CANCELLED AT 2025-08-27T14:34:56 ***
+- Epoch 003, ExpID 67404
+Train - Loss (one batch): 0.00414
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00607, 0.00607, 0.07792, 0.04037, 140.44%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 3, 0.00590, 0.00590, 0.07679, 0.04057, 135.69%
+Time spent: 40.81s
+- Epoch 004, ExpID 67404
+Train - Loss (one batch): 0.00486
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00592, 0.00592, 0.07692, 0.03878, 114.90%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 4, 0.00588, 0.00588, 0.07666, 0.03936, 116.73%
+Time spent: 40.93s
+- Epoch 005, ExpID 67404
+Train - Loss (one batch): 0.00467
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00604, 0.00604, 0.07772, 0.03782, 67.39%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 4, 0.00588, 0.00588, 0.07666, 0.03936, 116.73%
+Time spent: 36.61s
+slurmstepd: error: *** JOB 373 ON gpusystem CANCELLED AT 2025-08-27T17:09:22 ***
