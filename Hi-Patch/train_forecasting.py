@@ -58,6 +58,16 @@ args.PID = os.getpid()
 
 print("PID, device:", args.PID, args.device)
 
+# ==== [ADD] Memory helpers ====
+def _format_mb(bytes_):
+    return bytes_ / (1024 ** 2)
+
+def get_peak_gpu_mem_mb(device):
+    if torch.cuda.is_available() and device.type == "cuda":
+        return _format_mb(torch.cuda.max_memory_allocated(device))
+    return 0.0
+# ==============================
+
 #####################################################################################################
 # Function to count model parameters
 def count_parameters(model):
@@ -125,7 +135,12 @@ if __name__ == '__main__':
     num_batches = data_obj["n_train_batches"]
     print("n_train_batches:", num_batches)
 
+    # ==== [ADD] Reset CUDA mem stats before training loop ====
+    if torch.cuda.is_available() and args.device.type == "cuda":
+        torch.cuda.reset_peak_memory_stats(args.device)
+
     train_time = []
+    train_peak_mems = []       # [ADD]
     best_val_mse = np.inf
     test_res = None
     for itr in range(args.epoch):
@@ -133,25 +148,44 @@ if __name__ == '__main__':
 
         ### Training ###
         model.train()
+        # [ADD] reset peak before training phase of this epoch
+        if torch.cuda.is_available() and args.device.type == "cuda":
+            torch.cuda.reset_peak_memory_stats(args.device)
+
         for _ in range(num_batches):
             optimizer.zero_grad()
             batch_dict = utils.get_next_batch(data_obj["train_dataloader"])
             train_res = compute_all_losses(model, batch_dict)
             train_res["loss"].backward()
             optimizer.step()
-
+        
         train_time.append(time.time() - st)
+
+        # [ADD] record peak GPU mem for training phase of this epoch
+        torch.cuda.synchronize() if torch.cuda.is_available() else None
+        train_peak_mem_epoch = get_peak_gpu_mem_mb(args.device)
+        train_peak_mems.append(train_peak_mem_epoch)
 
         ### Validation ###
         model.eval()
         with torch.no_grad():
+            if torch.cuda.is_available() and args.device.type == "cuda":
+                torch.cuda.reset_peak_memory_stats(args.device)
+
             val_res, _ = evaluation(model, data_obj["val_dataloader"], data_obj["n_val_batches"])
+            val_peak_mem_epoch = get_peak_gpu_mem_mb(args.device)
 
             ### Testing ###
             if (val_res["mse"] < best_val_mse):
                 best_val_mse = val_res["mse"]
                 best_iter = itr
+                # [ADD] reset peak before inference to measure only inference usage
+                if torch.cuda.is_available() and args.device.type == "cuda":
+                    torch.cuda.reset_peak_memory_stats(args.device)
                 test_res, inference_time = evaluation(model, data_obj["test_dataloader"], data_obj["n_test_batches"])
+
+                torch.cuda.synchronize() if torch.cuda.is_available() else None
+                inf_peak_mem = get_peak_gpu_mem_mb(args.device)
 
             logger.info('- Epoch {:03d}, ExpID {}'.format(itr, experimentID))
             logger.info("Train - Loss (one batch): {:.5f}".format(train_res["loss"].item()))
@@ -167,4 +201,8 @@ if __name__ == '__main__':
             print("Exp has been early stopped!")
             logger.info("Avg Train Time per epoch: {:.2f}s".format(np.mean(train_time)))
             logger.info("Avg Inference Time per epoch: {:.5f}s".format(inference_time))
+            if len(train_peak_mems) > 0:
+                logger.info("Avg Peak GPU Mem (Train): {:.1f} MB".format(np.mean(train_peak_mems)))
+            if inf_peak_mem is not None:
+                logger.info("Peak GPU Mem (Inference): {:.1f} MB".format(inf_peak_mem))
             sys.exit(0)
