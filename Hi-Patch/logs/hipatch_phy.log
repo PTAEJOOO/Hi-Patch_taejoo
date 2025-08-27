@@ -1,0 +1,4 @@
+PID, device: 780847 cuda:0
+Downloading https://physionet.org/files/challenge-2012/1.0.0/set-a.tar.gz?download to ../data/physionet/raw/set-a.tar.gz?download
+Processing set-a.tar.gz?download...
+Downloading https://physionet.org/files/challenge-2012/1.0.0/set-b.tar.gz?download to ../data/physionet/raw/set-b.tar.gz?download

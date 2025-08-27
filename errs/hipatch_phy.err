@@ -1,0 +1,20 @@
+
+EnvironmentNameNotFound: Could not find conda environment: hipatch
+You can list all discoverable environments with `conda info --envs`.
+
+
+python: can't open file '/home/taejoo/dsl_lab/Hi-Patch_taejoo/train_forecasting.py': [Errno 2] No such file or directory
+python: can't open file '/home/taejoo/dsl_lab/Hi-Patch_taejoo/train_forecasting.py': [Errno 2] No such file or directory
+python: can't open file '/home/taejoo/dsl_lab/Hi-Patch_taejoo/train_forecasting.py': [Errno 2] No such file or directory
+python: can't open file '/home/taejoo/dsl_lab/Hi-Patch_taejoo/train_forecasting.py': [Errno 2] No such file or directory
+python: can't open file '/home/taejoo/dsl_lab/Hi-Patch_taejoo/train_forecasting.py': [Errno 2] No such file or directory
+python: can't open file '/home/taejoo/dsl_lab/Hi-Patch_taejoo/train_forecasting.py': [Errno 2] No such file or directory
+python: can't open file '/home/taejoo/dsl_lab/Hi-Patch_taejoo/train_forecasting.py': [Errno 2] No such file or directory
+python: can't open file '/home/taejoo/dsl_lab/Hi-Patch_taejoo/train_forecasting.py': [Errno 2] No such file or directory
+python: can't open file '/home/taejoo/dsl_lab/Hi-Patch_taejoo/train_forecasting.py': [Errno 2] No such file or directory
+python: can't open file '/home/taejoo/dsl_lab/Hi-Patch_taejoo/train_forecasting.py': [Errno 2] No such file or directory
+python: can't open file '/home/taejoo/dsl_lab/Hi-Patch_taejoo/train_forecasting.py': [Errno 2] No such file or directory
+python: can't open file '/home/taejoo/dsl_lab/Hi-Patch_taejoo/train_forecasting.py': [Errno 2] No such file or directory
+python: can't open file '/home/taejoo/dsl_lab/Hi-Patch_taejoo/train_forecasting.py': [Errno 2] No such file or directory
+python: can't open file '/home/taejoo/dsl_lab/Hi-Patch_taejoo/train_forecasting.py': [Errno 2] No such file or directory
+python: can't open file '/home/taejoo/dsl_lab/Hi-Patch_taejoo/train_forecasting.py': [Errno 2] No such file or directory
