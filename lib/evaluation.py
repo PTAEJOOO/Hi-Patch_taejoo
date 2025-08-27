@@ -1,5 +1,7 @@
 import torch
 import lib.utils as utils
+import time
+import numpy as np
 
 def compute_error(truth, pred_y, mask, func, reduce, norm_dict=None):
 	# If pred_y has only 3 dimensions, add an extra dimension
@@ -85,15 +87,19 @@ def evaluation(model, dataloader, n_batches):
 	total_results["rmse"] = 0
 	total_results["mape"] = 0
 
+	infer_time = []
+
 	# Loop through batches to evaluate the model
 	for _ in range(n_batches):
 		# Get the next batch of data from the dataloader
 		batch_dict = utils.get_next_batch(dataloader)
 
 		# Predict future time points using the model
+		st = time.time()
 		pred_y = model.forecasting(batch_dict["tp_to_predict"],
 								   batch_dict["observed_data"], batch_dict["observed_tp"],
 								   batch_dict["observed_mask"])
+		infer_time.append(time.time() - st)
 
 		# Compute Sum of Squared Errors (MSE), Absolute Errors (MAE), and Absolute Percentage Errors (MAPE)
 		se_var_sum, mask_count = compute_error(batch_dict["data_to_predict"], pred_y,
@@ -131,4 +137,4 @@ def evaluation(model, dataloader, n_batches):
 			var = var.item()
 		total_results[key] = var
 
-	return total_results
+	return total_results, np.mean(infer_time)

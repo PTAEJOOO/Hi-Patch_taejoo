@@ -4,12 +4,17 @@ You can list all discoverable environments with `conda info --envs`.
 
 
 /home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py
-2025-08-27 14:27:19
+2025-08-27 14:33:35
 train_forecasting.py --dataset physionet --state def --history 24 --patience 10 --batch_size 64 --lr 1e-3 --patch_size 6 --stride 6 --nhead 1 --nlayer 1 --hid_dim 64 --seed 1 --gpu 0 --alpha 1
-Namespace(state='def', n=100000000, epoch=1000, patience=10, history=24, pred_window=24, logmode='a', lr=0.001, w_decay=0.0, batch_size=64, load=None, seed=1, dataset='physionet', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=1, patch_size=6.0, stride=6.0, hid_dim=64, alpha=1.0, res=1, gpu='0', npatch=4, device=device(type='cuda', index=0), PID=782775, ndim=41, patch_layer=3, scale_patch_size=0.125, task='forecasting')
-- Epoch 000, ExpID 62820
+Namespace(state='def', n=100000000, epoch=1000, patience=10, history=24, pred_window=24, logmode='a', lr=0.001, w_decay=0.0, batch_size=64, load=None, seed=1, dataset='physionet', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=1, patch_size=6.0, stride=6.0, hid_dim=64, alpha=1.0, res=1, gpu='0', npatch=4, device=device(type='cuda', index=0), PID=784953, ndim=41, patch_layer=3, scale_patch_size=0.125, task='forecasting')
+- Epoch 000, ExpID 31249
 Train - Loss (one batch): 0.00445
 Val - Loss, MSE, RMSE, MAE, MAPE: 0.00725, 0.00725, 0.08517, 0.04569, 157.74%
 Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 0, 0.00704, 0.00704, 0.08392, 0.04584, 163.30%
-Time spent: 49.02s
-slurmstepd: error: *** JOB 365 ON gpusystem CANCELLED AT 2025-08-27T14:28:30 ***
+Time spent: 41.03s
+- Epoch 001, ExpID 31249
+Train - Loss (one batch): 0.00515
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00635, 0.00635, 0.07969, 0.04149, 140.34%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 1, 0.00615, 0.00615, 0.07842, 0.04185, 141.53%
+Time spent: 40.81s
+slurmstepd: error: *** JOB 366 ON gpusystem CANCELLED AT 2025-08-27T14:34:56 ***

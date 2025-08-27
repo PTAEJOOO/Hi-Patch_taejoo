@@ -2,4 +2,4 @@
 *.pyc
 *.xml
 *.csv
-data/physionet/raw/*
+data/

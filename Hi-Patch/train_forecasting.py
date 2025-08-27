@@ -125,6 +125,7 @@ if __name__ == '__main__':
     num_batches = data_obj["n_train_batches"]
     print("n_train_batches:", num_batches)
 
+    train_time = []
     best_val_mse = np.inf
     test_res = None
     for itr in range(args.epoch):
@@ -139,16 +140,18 @@ if __name__ == '__main__':
             train_res["loss"].backward()
             optimizer.step()
 
+        train_time.append(time.time() - st)
+
         ### Validation ###
         model.eval()
         with torch.no_grad():
-            val_res = evaluation(model, data_obj["val_dataloader"], data_obj["n_val_batches"])
+            val_res, _ = evaluation(model, data_obj["val_dataloader"], data_obj["n_val_batches"])
 
             ### Testing ###
             if (val_res["mse"] < best_val_mse):
                 best_val_mse = val_res["mse"]
                 best_iter = itr
-                test_res = evaluation(model, data_obj["test_dataloader"], data_obj["n_test_batches"])
+                test_res, inference_time = evaluation(model, data_obj["test_dataloader"], data_obj["n_test_batches"])
 
             logger.info('- Epoch {:03d}, ExpID {}'.format(itr, experimentID))
             logger.info("Train - Loss (one batch): {:.5f}".format(train_res["loss"].item()))
@@ -162,4 +165,6 @@ if __name__ == '__main__':
 
         if(itr - best_iter >= args.patience):
             print("Exp has been early stopped!")
+            logger.info("Avg Train Time per epoch: {:.2f}s".format(np.mean(train_time)))
+            logger.info("Avg Inference Time per epoch: {:.5f}s".format(inference_time))
             sys.exit(0)
