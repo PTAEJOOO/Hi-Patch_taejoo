@@ -1,4 +1,4 @@
-PID, device: 1019496 cuda:0
+PID, device: 1028896 cuda:0
 Total records: 1114
 Dataset n_samples: 1114 668 223 223
 Test record ids (first 20): [886, 101, 1120, 730, 291, 875, 958, 260, 128, 1043, 620, 88, 1005, 872, 617, 538, 508, 44, 273, 817]
@@ -25,9 +25,9 @@ model Hi_Patch(
   )
 )
 parameters: 400001
-n_train_batches: 84
+n_train_batches: 126
 Exp has been early stopped!
-PID, device: 1020154 cuda:0
+PID, device: 1029417 cuda:0
 Total records: 1114
 Dataset n_samples: 1114 668 223 223
 Test record ids (first 20): [886, 101, 1120, 730, 291, 875, 958, 260, 128, 1043, 620, 88, 1005, 872, 617, 538, 508, 44, 273, 817]
@@ -54,9 +54,9 @@ model Hi_Patch(
   )
 )
 parameters: 400001
-n_train_batches: 84
+n_train_batches: 126
 Exp has been early stopped!
-PID, device: 1020396 cuda:0
+PID, device: 1029657 cuda:0
 Total records: 1114
 Dataset n_samples: 1114 668 223 223
 Test record ids (first 20): [886, 101, 1120, 730, 291, 875, 958, 260, 128, 1043, 620, 88, 1005, 872, 617, 538, 508, 44, 273, 817]
@@ -83,9 +83,9 @@ model Hi_Patch(
   )
 )
 parameters: 400001
-n_train_batches: 84
+n_train_batches: 126
 Exp has been early stopped!
-PID, device: 1020633 cuda:0
+PID, device: 1030023 cuda:0
 Total records: 1114
 Dataset n_samples: 1114 668 223 223
 Test record ids (first 20): [886, 101, 1120, 730, 291, 875, 958, 260, 128, 1043, 620, 88, 1005, 872, 617, 538, 508, 44, 273, 817]
@@ -112,9 +112,9 @@ model Hi_Patch(
   )
 )
 parameters: 400001
-n_train_batches: 84
+n_train_batches: 126
 Exp has been early stopped!
-PID, device: 1020941 cuda:0
+PID, device: 1030481 cuda:0
 Total records: 1114
 Dataset n_samples: 1114 668 223 223
 Test record ids (first 20): [886, 101, 1120, 730, 291, 875, 958, 260, 128, 1043, 620, 88, 1005, 872, 617, 538, 508, 44, 273, 817]
@@ -141,5 +141,5 @@ model Hi_Patch(
   )
 )
 parameters: 400001
-n_train_batches: 84
+n_train_batches: 126
 Exp has been early stopped!

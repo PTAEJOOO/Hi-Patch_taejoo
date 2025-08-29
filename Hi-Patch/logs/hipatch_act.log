@@ -1,4 +1,4 @@
-PID, device: 1024562 cuda:0
+PID, device: 1028934 cuda:0
 Total records: 25
 Dataset n_samples: 25 15 5 5
 Test record ids (first 20): ['B04', 'D02', 'A01', 'E04', 'C02']
@@ -30,7 +30,103 @@ model Hi_Patch(
 parameters: 363137
 n_train_batches: 104
 Exp has been early stopped!
-PID, device: 1025469 cuda:0
+PID, device: 1029760 cuda:0
+Total records: 25
+Dataset n_samples: 25 15 5 5
+Test record ids (first 20): ['B04', 'D02', 'A01', 'E04', 'C02']
+Test record ids (last 20): ['B04', 'D02', 'A01', 'E04', 'C02']
+data_max: tensor([5.6217, 3.9067, 2.4465, 5.3456, 3.9414, 2.2163, 5.7582, 3.9781, 2.6061,
+        5.3913, 3.9654, 2.6011], device='cuda:0')
+data_min: tensor([ 0.1852, -0.1228, -1.4615,  0.1606, -0.4760, -2.5436, -0.2787, -0.4944,
+        -2.0269,  0.0198, -0.4789, -1.9588], device='cuda:0')
+time_max: tensor(304861., device='cuda:0')
+manual set time_max: tensor(4000)
+Dataset n_samples after time split: 5400 3318 1007 1075
+model Hi_Patch(
+  (gcs): ModuleList(
+    (0-2): 3 x Intra_Inter_Patch_Graph_Layer
+  )
+  (te_scale): Linear(in_features=1, out_features=1, bias=True)
+  (te_periodic): Linear(in_features=1, out_features=63, bias=True)
+  (obs_enc): Linear(in_features=1, out_features=64, bias=True)
+  (nodevec): Embedding(12, 64)
+  (relu): ReLU()
+  (decoder): Sequential(
+    (0): Linear(in_features=128, out_features=64, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Linear(in_features=64, out_features=64, bias=True)
+    (3): ReLU(inplace=True)
+    (4): Linear(in_features=64, out_features=1, bias=True)
+  )
+)
+parameters: 363137
+n_train_batches: 104
+Exp has been early stopped!
+PID, device: 1030228 cuda:0
+Total records: 25
+Dataset n_samples: 25 15 5 5
+Test record ids (first 20): ['B04', 'D02', 'A01', 'E04', 'C02']
+Test record ids (last 20): ['B04', 'D02', 'A01', 'E04', 'C02']
+data_max: tensor([5.6217, 3.9067, 2.4465, 5.3456, 3.9414, 2.2163, 5.7582, 3.9781, 2.6061,
+        5.3913, 3.9654, 2.6011], device='cuda:0')
+data_min: tensor([ 0.1852, -0.1228, -1.4615,  0.1606, -0.4760, -2.5436, -0.2787, -0.4944,
+        -2.0269,  0.0198, -0.4789, -1.9588], device='cuda:0')
+time_max: tensor(304861., device='cuda:0')
+manual set time_max: tensor(4000)
+Dataset n_samples after time split: 5400 3318 1007 1075
+model Hi_Patch(
+  (gcs): ModuleList(
+    (0-2): 3 x Intra_Inter_Patch_Graph_Layer
+  )
+  (te_scale): Linear(in_features=1, out_features=1, bias=True)
+  (te_periodic): Linear(in_features=1, out_features=63, bias=True)
+  (obs_enc): Linear(in_features=1, out_features=64, bias=True)
+  (nodevec): Embedding(12, 64)
+  (relu): ReLU()
+  (decoder): Sequential(
+    (0): Linear(in_features=128, out_features=64, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Linear(in_features=64, out_features=64, bias=True)
+    (3): ReLU(inplace=True)
+    (4): Linear(in_features=64, out_features=1, bias=True)
+  )
+)
+parameters: 363137
+n_train_batches: 104
+Exp has been early stopped!
+PID, device: 1030656 cuda:0
+Total records: 25
+Dataset n_samples: 25 15 5 5
+Test record ids (first 20): ['B04', 'D02', 'A01', 'E04', 'C02']
+Test record ids (last 20): ['B04', 'D02', 'A01', 'E04', 'C02']
+data_max: tensor([5.6217, 3.9067, 2.4465, 5.3456, 3.9414, 2.2163, 5.7582, 3.9781, 2.6061,
+        5.3913, 3.9654, 2.6011], device='cuda:0')
+data_min: tensor([ 0.1852, -0.1228, -1.4615,  0.1606, -0.4760, -2.5436, -0.2787, -0.4944,
+        -2.0269,  0.0198, -0.4789, -1.9588], device='cuda:0')
+time_max: tensor(304861., device='cuda:0')
+manual set time_max: tensor(4000)
+Dataset n_samples after time split: 5400 3318 1007 1075
+model Hi_Patch(
+  (gcs): ModuleList(
+    (0-2): 3 x Intra_Inter_Patch_Graph_Layer
+  )
+  (te_scale): Linear(in_features=1, out_features=1, bias=True)
+  (te_periodic): Linear(in_features=1, out_features=63, bias=True)
+  (obs_enc): Linear(in_features=1, out_features=64, bias=True)
+  (nodevec): Embedding(12, 64)
+  (relu): ReLU()
+  (decoder): Sequential(
+    (0): Linear(in_features=128, out_features=64, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Linear(in_features=64, out_features=64, bias=True)
+    (3): ReLU(inplace=True)
+    (4): Linear(in_features=64, out_features=1, bias=True)
+  )
+)
+parameters: 363137
+n_train_batches: 104
+Exp has been early stopped!
+PID, device: 1032401 cuda:0
 Total records: 25
 Dataset n_samples: 25 15 5 5
 Test record ids (first 20): ['B04', 'D02', 'A01', 'E04', 'C02']

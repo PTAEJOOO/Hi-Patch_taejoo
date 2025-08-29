@@ -2,12 +2,12 @@
 ### activity_Hi-Patch_def_750.0patch_750.0stride_3layer_0.001lr.log ###
 Dataset: activity
 Total Trainable Parameters: Unknown
-Seed 0: MSE=0.00259, MAE=0.03129, Train Time=30.53000s, Inference Time=0.17957s, GPU Train=5367.6 MB, GPU Infer=3398.7 MB
-Seed 1: MSE=0.00257, MAE=0.03124, Train Time=30.51000s, Inference Time=0.17952s, GPU Train=5370.0 MB, GPU Infer=3400.1 MB
-Seed 2: MSE=0.00255, MAE=0.03116, Train Time=30.48000s, Inference Time=0.17989s, GPU Train=5371.1 MB, GPU Infer=3398.6 MB
-Seed 3: MSE=0.00261, MAE=0.03131, Train Time=30.65000s, Inference Time=0.18056s, GPU Train=5370.1 MB, GPU Infer=3398.7 MB
-Seed 4: MSE=0.00255, MAE=0.03128, Train Time=30.65000s, Inference Time=0.18047s, GPU Train=5368.0 MB, GPU Infer=3398.7 MB
-Mean(Std): MSE=0.00257 (0.00003), MAE=0.03126 (0.00006), Train Time=30.56400s, Inference Time=0.18000s, GPU Train=5369.4 MB, GPU Infer=3399.0 MB
+Seed 0: MSE=0.00259, MAE=0.03129, Train Time=30.50000s, Inference Time=0.17939s, GPU Train=5367.6 MB, GPU Infer=3398.7 MB
+Seed 1: MSE=0.00257, MAE=0.03124, Train Time=30.48000s, Inference Time=0.17939s, GPU Train=5370.0 MB, GPU Infer=3400.1 MB
+Seed 2: MSE=0.00255, MAE=0.03116, Train Time=30.45000s, Inference Time=0.17920s, GPU Train=5371.1 MB, GPU Infer=3398.6 MB
+Seed 3: MSE=0.00261, MAE=0.03131, Train Time=30.49000s, Inference Time=0.17985s, GPU Train=5370.1 MB, GPU Infer=3398.7 MB
+Seed 4: MSE=0.00255, MAE=0.03128, Train Time=30.47000s, Inference Time=0.17981s, GPU Train=5368.0 MB, GPU Infer=3398.7 MB
+Mean(Std): MSE=0.00257 (0.00003), MAE=0.03126 (0.00006), Train Time=30.47800s, Inference Time=0.17953s, GPU Train=5369.4 MB, GPU Infer=3399.0 MB
 
 ### mimic_Hi-Patch_def_12.0patch_12.0stride_1layer_0.001lr.log ###
 Dataset: mimic
@@ -22,24 +22,24 @@ Mean(Std): MSE=0.01600 (0.00018), MAE=0.06977 (0.00107), Train Time=70.00200s, I
 ### physionet_Hi-Patch_def_6.0patch_6.0stride_1layer_0.001lr.log ###
 Dataset: physionet
 Total Trainable Parameters: Unknown
-Seed 0: MSE=0.00582, MAE=0.04036, Train Time=28.57000s, Inference Time=0.07678s, GPU Train=6965.3 MB, GPU Infer=5870.3 MB
-Seed 1: MSE=0.00570, MAE=0.03809, Train Time=28.67000s, Inference Time=0.07639s, GPU Train=7105.6 MB, GPU Infer=5870.7 MB
-Seed 2: MSE=0.00553, MAE=0.03798, Train Time=28.68000s, Inference Time=0.07644s, GPU Train=7064.1 MB, GPU Infer=5869.5 MB
-Seed 3: MSE=0.00548, MAE=0.03694, Train Time=28.64000s, Inference Time=0.07647s, GPU Train=7009.6 MB, GPU Infer=5871.9 MB
-Seed 4: MSE=0.00568, MAE=0.03787, Train Time=28.65000s, Inference Time=0.07651s, GPU Train=7060.4 MB, GPU Infer=5870.9 MB
-Mean(Std): MSE=0.00564 (0.00014), MAE=0.03825 (0.00127), Train Time=28.64200s, Inference Time=0.07652s, GPU Train=7041.0 MB, GPU Infer=5870.7 MB
+Seed 0: MSE=0.00585, MAE=0.03796, Train Time=27.86000s, Inference Time=0.14892s, GPU Train=12774.8 MB, GPU Infer=10769.8 MB
+Seed 1: MSE=0.00573, MAE=0.03779, Train Time=27.73000s, Inference Time=0.14861s, GPU Train=12761.9 MB, GPU Infer=10772.1 MB
+Seed 2: MSE=0.00566, MAE=0.03929, Train Time=27.81000s, Inference Time=0.14887s, GPU Train=12910.3 MB, GPU Infer=10771.0 MB
+Seed 3: MSE=0.00581, MAE=0.03932, Train Time=27.83000s, Inference Time=0.14865s, GPU Train=12745.5 MB, GPU Infer=10770.1 MB
+Seed 4: MSE=0.00563, MAE=0.03778, Train Time=27.75000s, Inference Time=0.14891s, GPU Train=12852.4 MB, GPU Infer=10770.6 MB
+Mean(Std): MSE=0.00574 (0.00009), MAE=0.03843 (0.00080), Train Time=27.79600s, Inference Time=0.14879s, GPU Train=12809.0 MB, GPU Infer=10770.7 MB
 
 ### ushcn_Hi-Patch_def_1.5patch_1.5stride_2layer_0.001lr.log ###
 Dataset: ushcn
 Total Trainable Parameters: Unknown
-Seed 0: MSE=0.49263, MAE=0.30880, Train Time=34.33000s, Inference Time=0.17927s, GPU Train=3722.5 MB, GPU Infer=2926.6 MB
-Seed 1: MSE=0.49652, MAE=0.31327, Train Time=34.31000s, Inference Time=0.17879s, GPU Train=3724.4 MB, GPU Infer=2928.0 MB
-Seed 2: MSE=0.49392, MAE=0.32367, Train Time=34.34000s, Inference Time=0.17929s, GPU Train=3721.9 MB, GPU Infer=2927.5 MB
-Seed 3: MSE=0.49769, MAE=0.28991, Train Time=34.28000s, Inference Time=0.17898s, GPU Train=3728.7 MB, GPU Infer=2926.6 MB
-Seed 4: MSE=0.49695, MAE=0.30099, Train Time=34.22000s, Inference Time=0.17949s, GPU Train=3737.0 MB, GPU Infer=2926.6 MB
-Mean(Std): MSE=0.49554 (0.00216), MAE=0.30733 (0.01273), Train Time=34.29600s, Inference Time=0.17916s, GPU Train=3726.9 MB, GPU Infer=2927.1 MB
+Seed 0: MSE=0.50254, MAE=0.30421, Train Time=38.89000s, Inference Time=0.13095s, GPU Train=2593.8 MB, GPU Infer=2041.4 MB
+Seed 1: MSE=0.49918, MAE=0.29154, Train Time=38.92000s, Inference Time=0.13135s, GPU Train=2594.8 MB, GPU Infer=2042.6 MB
+Seed 2: MSE=0.50347, MAE=0.29504, Train Time=38.94000s, Inference Time=0.13152s, GPU Train=2599.3 MB, GPU Infer=2041.9 MB
+Seed 3: MSE=0.50148, MAE=0.28823, Train Time=38.78000s, Inference Time=0.13113s, GPU Train=2595.1 MB, GPU Infer=2042.3 MB
+Seed 4: MSE=0.49463, MAE=0.29298, Train Time=38.64000s, Inference Time=0.13104s, GPU Train=2601.8 MB, GPU Infer=2041.4 MB
+Mean(Std): MSE=0.50026 (0.00353), MAE=0.29440 (0.00602), Train Time=38.83400s, Inference Time=0.13120s, GPU Train=2597.0 MB, GPU Infer=2041.9 MB
 
 ### Best Log File: activity_Hi-Patch_def_750.0patch_750.0stride_3layer_0.001lr.log ###
 Dataset: activity
 Total Trainable Parameters: Unknown
-Lowest MSE Mean: 0.00257 (0.00003), MAE Mean: 0.03126 (0.00006), Train Time Mean: 30.56400s, Inference Time Mean: 0.18000s, GPU Train=5369.4 MB, GPU Infer=3399.0 MB
+Lowest MSE Mean: 0.00257 (0.00003), MAE Mean: 0.03126 (0.00006), Train Time Mean: 30.47800s, Inference Time Mean: 0.17953s, GPU Train=5369.4 MB, GPU Infer=3399.0 MB

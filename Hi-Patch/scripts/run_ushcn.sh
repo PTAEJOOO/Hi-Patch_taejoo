@@ -6,7 +6,7 @@ for seed in {0..4}
 do
     python train_forecasting.py \
     --dataset ushcn --state def --history 24 --pred_window 1 \
-    --patience $patience --batch_size 192 --lr 1e-3 \
+    --patience $patience --batch_size 128 --lr 1e-3 \
     --patch_size 1.5 --stride 1.5 --nhead 4  --nlayer 2 \
     --hid_dim 64 \
     --seed $seed --gpu $gpu --alpha 1

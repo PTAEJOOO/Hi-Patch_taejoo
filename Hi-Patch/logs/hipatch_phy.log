@@ -1,4 +1,4 @@
-PID, device: 1019148 cuda:0
+PID, device: 1028844 cuda:0
 Total records: 12000
 Dataset n_samples: 12000 7200 2400 2400
 Test record ids (first 20): ['135658', '143565', '132686', '153336', '136234', '161259', '144334', '155826', '132965', '145771', '135230', '142282', '132811', '138581', '145324', '156677', '138893', '149970', '138857', '142583']
@@ -39,9 +39,9 @@ model Hi_Patch(
   )
 )
 parameters: 140097
-n_train_batches: 225
+n_train_batches: 113
 Exp has been early stopped!
-PID, device: 1019589 cuda:0
+PID, device: 1029460 cuda:0
 Total records: 12000
 Dataset n_samples: 12000 7200 2400 2400
 Test record ids (first 20): ['135658', '143565', '132686', '153336', '136234', '161259', '144334', '155826', '132965', '145771', '135230', '142282', '132811', '138581', '145324', '156677', '138893', '149970', '138857', '142583']
@@ -82,9 +82,9 @@ model Hi_Patch(
   )
 )
 parameters: 140097
-n_train_batches: 225
+n_train_batches: 113
 Exp has been early stopped!
-PID, device: 1020264 cuda:0
+PID, device: 1029734 cuda:0
 Total records: 12000
 Dataset n_samples: 12000 7200 2400 2400
 Test record ids (first 20): ['135658', '143565', '132686', '153336', '136234', '161259', '144334', '155826', '132965', '145771', '135230', '142282', '132811', '138581', '145324', '156677', '138893', '149970', '138857', '142583']
@@ -125,9 +125,9 @@ model Hi_Patch(
   )
 )
 parameters: 140097
-n_train_batches: 225
+n_train_batches: 113
 Exp has been early stopped!
-PID, device: 1020464 cuda:0
+PID, device: 1029906 cuda:0
 Total records: 12000
 Dataset n_samples: 12000 7200 2400 2400
 Test record ids (first 20): ['135658', '143565', '132686', '153336', '136234', '161259', '144334', '155826', '132965', '145771', '135230', '142282', '132811', '138581', '145324', '156677', '138893', '149970', '138857', '142583']
@@ -168,9 +168,9 @@ model Hi_Patch(
   )
 )
 parameters: 140097
-n_train_batches: 225
+n_train_batches: 113
 Exp has been early stopped!
-PID, device: 1020878 cuda:0
+PID, device: 1030145 cuda:0
 Total records: 12000
 Dataset n_samples: 12000 7200 2400 2400
 Test record ids (first 20): ['135658', '143565', '132686', '153336', '136234', '161259', '144334', '155826', '132965', '145771', '135230', '142282', '132811', '138581', '145324', '156677', '138893', '149970', '138857', '142583']
@@ -211,5 +211,5 @@ model Hi_Patch(
   )
 )
 parameters: 140097
-n_train_batches: 225
+n_train_batches: 113
 Exp has been early stopped!

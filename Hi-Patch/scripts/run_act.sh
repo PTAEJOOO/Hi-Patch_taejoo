@@ -2,7 +2,7 @@
 patience=10
 gpu=0
 
-for seed in {3..4}
+for seed in {0..4}
 do
     python train_forecasting.py \
     --dataset activity --state def --history 3000  \
