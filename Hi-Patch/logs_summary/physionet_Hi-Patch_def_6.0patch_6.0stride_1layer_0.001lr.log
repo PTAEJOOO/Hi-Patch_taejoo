@@ -1,8 +1,3 @@
-
-EnvironmentNameNotFound: Could not find conda environment: hipatch
-You can list all discoverable environments with `conda info --envs`.
-
-
 /home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py
 2025-08-29 13:34:01
 train_forecasting.py --dataset physionet --state def --history 24 --patience 10 --batch_size 32 --lr 1e-3 --patch_size 6 --stride 6 --nhead 1 --nlayer 1 --hid_dim 64 --seed 0 --gpu 0 --alpha 1

@@ -7,7 +7,7 @@ python train_forecasting.py \
     --patience 10 --batch_size 8 --lr 1e-3 \
     --patch_size 12 --stride 12 --nhead 1  --nlayer 1 \
     --hid_dim 128 \
-    --seed 0 --gpu $gpu --alpha 0.9
+    --seed 4 --gpu $gpu --alpha 0.9
 
 # for seed in {0..4}
 # do

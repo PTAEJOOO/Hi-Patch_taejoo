@@ -1,0 +1,68 @@
+/home/taejoo/dsl_lab/Hi-Patch_taejoo/Hi-Patch/train_forecasting.py
+2025-08-29 13:34:01
+train_forecasting.py --dataset physionet --state def --history 24 --patience 10 --batch_size 32 --lr 1e-3 --patch_size 6 --stride 6 --nhead 1 --nlayer 1 --hid_dim 64 --seed 0 --gpu 0 --alpha 1
+Namespace(state='def', n=100000000, epoch=1000, patience=10, history=24, pred_window=24, logmode='a', lr=0.001, w_decay=0.0, batch_size=32, load=None, seed=0, dataset='physionet', quantization=0.0, model='Hi-Patch', nhead=1, nlayer=1, patch_size=6.0, stride=6.0, hid_dim=64, alpha=1.0, res=1, gpu='0', npatch=4, device=device(type='cuda', index=0), PID=1019148, ndim=41, patch_layer=3, scale_patch_size=0.125, task='forecasting')
+- Epoch 000, ExpID 41849
+Train - Loss (one batch): 0.00526
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00672, 0.00672, 0.08195, 0.04402, 99.33%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 0, 0.00645, 0.00645, 0.08029, 0.04368, 102.20%
+Time spent: 41.49s
+- Epoch 001, ExpID 41849
+Train - Loss (one batch): 0.00403
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00593, 0.00593, 0.07704, 0.04004, 121.87%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 1, 0.00582, 0.00582, 0.07628, 0.04036, 122.13%
+Time spent: 41.36s
+- Epoch 002, ExpID 41849
+Train - Loss (one batch): 0.00469
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00644, 0.00644, 0.08022, 0.04110, 118.20%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 1, 0.00582, 0.00582, 0.07628, 0.04036, 122.13%
+Time spent: 34.90s
+- Epoch 003, ExpID 41849
+Train - Loss (one batch): 0.00437
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00611, 0.00611, 0.07818, 0.03768, 73.79%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 1, 0.00582, 0.00582, 0.07628, 0.04036, 122.13%
+Time spent: 34.95s
+- Epoch 004, ExpID 41849
+Train - Loss (one batch): 0.00538
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00601, 0.00601, 0.07749, 0.03952, 88.21%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 1, 0.00582, 0.00582, 0.07628, 0.04036, 122.13%
+Time spent: 34.91s
+- Epoch 005, ExpID 41849
+Train - Loss (one batch): 0.00361
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00623, 0.00623, 0.07896, 0.04041, 95.74%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 1, 0.00582, 0.00582, 0.07628, 0.04036, 122.13%
+Time spent: 34.96s
+- Epoch 006, ExpID 41849
+Train - Loss (one batch): 0.00350
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00604, 0.00604, 0.07773, 0.04285, 168.93%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 1, 0.00582, 0.00582, 0.07628, 0.04036, 122.13%
+Time spent: 34.91s
+- Epoch 007, ExpID 41849
+Train - Loss (one batch): 0.00351
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00622, 0.00622, 0.07885, 0.03921, 114.15%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 1, 0.00582, 0.00582, 0.07628, 0.04036, 122.13%
+Time spent: 34.90s
+- Epoch 008, ExpID 41849
+Train - Loss (one batch): 0.00285
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00630, 0.00630, 0.07937, 0.03840, 72.78%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 1, 0.00582, 0.00582, 0.07628, 0.04036, 122.13%
+Time spent: 34.93s
+- Epoch 009, ExpID 41849
+Train - Loss (one batch): 0.00523
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00598, 0.00598, 0.07733, 0.03989, 177.01%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 1, 0.00582, 0.00582, 0.07628, 0.04036, 122.13%
+Time spent: 34.90s
+- Epoch 010, ExpID 41849
+Train - Loss (one batch): 0.00424
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00620, 0.00620, 0.07872, 0.03908, 93.46%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 1, 0.00582, 0.00582, 0.07628, 0.04036, 122.13%
+Time spent: 34.92s
+- Epoch 011, ExpID 41849
+Train - Loss (one batch): 0.00623
+Val - Loss, MSE, RMSE, MAE, MAPE: 0.00597, 0.00597, 0.07729, 0.03728, 77.17%
+Test - Best epoch, Loss, MSE, RMSE, MAE, MAPE: 1, 0.00582, 0.00582, 0.07628, 0.04036, 122.13%
+Time spent: 34.93s
+Avg Train Time per epoch: 28.57s
+Avg Inference Time per epoch: 0.07678s
+Avg Peak GPU Mem (Train): 6965.3 MB
+Peak GPU Mem (Inference): 5870.3 MB

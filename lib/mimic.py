@@ -45,7 +45,8 @@ class MIMIC(object):
         # print(mask_cols)
         data_gp = full_data.groupby(level=0) # group by index
         for record_id, data in data_gp:
-            tt = torch.tensor((data['Time'] / np.timedelta64(1, 'm')).values).to(self.device).float() / 60.
+            # tt = torch.tensor((data['Time'] / np.timedelta64(1, 'm')).values).to(self.device).float() / 60.
+            tt = torch.tensor(data['Time'].values).to(self.device).float() / 60.
             vals = torch.tensor(data[value_cols].values).to(self.device).float()
             mask = torch.tensor(data[mask_cols].values).to(self.device).float()
             patients.append((record_id, tt, vals, mask))

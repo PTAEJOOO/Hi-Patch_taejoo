@@ -38,6 +38,7 @@ args = parser.parse_args()
 args.npatch = int(np.ceil((args.history - args.patch_size) / args.stride)) + 1 # (window size for a patch)
 os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu
 os.environ['CUBLAS_WORKSPACE_CONFIG'] = ':4096:8'
+# os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
 
 import torch
 import torch.optim as optim
